@@ -1,3 +1,5 @@
+package mindrot.jbcrypt;
+
 // Copyright (c) 2006 Damien Miller <djm@mindrot.org>
 //
 // Permission to use, copy, modify, and distribute this software for any
@@ -52,7 +54,7 @@ import java.security.SecureRandom;
  * String stronger_salt = BCrypt.gensalt(12)<br />
  * </code>
  * <p>
- * The amount of work increases exponentially (2**log_rounds), so 
+ * The amount of work increases exponentially (2**log_rounds), so
  * each increment is twice as much work. The default log_rounds is
  * 10, and the valid range is 4 to 31.
  *
@@ -61,7 +63,7 @@ import java.security.SecureRandom;
  */
 public class BCrypt {
 	// BCrypt parameters
-	private static final int GENSALT_DEFAULT_LOG2_ROUNDS = 10;
+	private static final int GENSALT_DEFAULT_LOG2_ROUNDS = 16;
 	private static final int BCRYPT_SALT_LEN = 16;
 
 	// Blowfish parameters

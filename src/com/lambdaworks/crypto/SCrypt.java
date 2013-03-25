@@ -2,8 +2,6 @@
 
 package com.lambdaworks.crypto;
 
-import com.lambdaworks.jni.*;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.GeneralSecurityException;
@@ -21,12 +19,6 @@ import static java.lang.System.arraycopy;
  * @author  Will Glozer
  */
 public class SCrypt {
-    private static final boolean native_library_loaded;
-
-    static {
-        LibraryLoader loader = LibraryLoaders.loader();
-        native_library_loaded = loader.load("scrypt", true);
-    }
 
     /**
      * Implementation of the <a href="http://www.tarsnap.com/scrypt/scrypt.pdf"/>scrypt KDF</a>.
@@ -45,23 +37,9 @@ public class SCrypt {
      * @throws GeneralSecurityException when HMAC_SHA256 is not available.
      */
     public static byte[] scrypt(byte[] passwd, byte[] salt, int N, int r, int p, int dkLen) throws GeneralSecurityException {
-        return native_library_loaded ? scryptN(passwd, salt, N, r, p, dkLen) : scryptJ(passwd, salt, N, r, p, dkLen);
+        return scryptJ(passwd, salt, N, r, p, dkLen);
     }
 
-    /**
-     * Native C implementation of the <a href="http://www.tarsnap.com/scrypt/scrypt.pdf"/>scrypt KDF</a> using
-     * the code from <a href="http://www.tarsnap.com/scrypt.html">http://www.tarsnap.com/scrypt.html<a>.
-     *
-     * @param passwd    Password.
-     * @param salt      Salt.
-     * @param N         CPU cost parameter.
-     * @param r         Memory cost parameter.
-     * @param p         Parallelization parameter.
-     * @param dkLen     Intended length of the derived key.
-     *
-     * @return The derived key.
-     */
-    public static native byte[] scryptN(byte[] passwd, byte[] salt, int N, int r, int p, int dkLen);
 
     /**
      * Pure Java implementation of the <a href="http://www.tarsnap.com/scrypt/scrypt.pdf"/>scrypt KDF</a>.

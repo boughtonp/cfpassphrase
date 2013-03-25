@@ -1,3 +1,5 @@
+package crackstation.PBKDF2;
+
 import java.security.SecureRandom;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.SecretKeyFactory;
@@ -9,6 +11,10 @@ import java.security.spec.InvalidKeySpecException;
  * PBKDF2 salted password hashing.
  * Author: havoc AT defuse.ca
  * www: http://crackstation.net/hashing-security.htm
+ *
+ * Note:
+ * Modified version with additional createHash methods
+ * to receive arguments Iterations,SaltBytes,HashBytes;
  */
 public class PasswordHash
 {
@@ -17,7 +23,7 @@ public class PasswordHash
     // The following constants may be changed without breaking existing hashes.
     public static final int SALT_BYTES = 24;
     public static final int HASH_BYTES = 24;
-    public static final int PBKDF2_ITERATIONS = 1000;
+    public static final int PBKDF2_ITERATIONS = 86000;
 
     public static final int ITERATION_INDEX = 0;
     public static final int SALT_INDEX = 1;
@@ -32,7 +38,27 @@ public class PasswordHash
     public static String createHash(String password)
         throws NoSuchAlgorithmException, InvalidKeySpecException
     {
-        return createHash(password.toCharArray());
+        return createHash(password.toCharArray(),null,null,null);
+    }
+
+    /**
+     * Returns a salted PBKDF2 hash of the password.
+     *
+     * @param   password    the password to hash
+     * @param   Iterations  the number of hash iterations. Default 1000
+     * @param   SaltBytes   the size of the salt. Default 24 bytes.
+     * @param   HashBytes   the size of the hash. Default 24 bytes.
+     * @return              a salted PBKDF2 hash of the password
+     */
+    public static String createHash
+    	( String  password
+    	, Integer Iterations
+    	, Integer SaltBytes
+    	, Integer HashBytes
+    	)
+        throws NoSuchAlgorithmException, InvalidKeySpecException
+    {
+        return createHash(password.toCharArray(),Iterations,SaltBytes,HashBytes);
     }
 
     /**
@@ -44,15 +70,39 @@ public class PasswordHash
     public static String createHash(char[] password)
         throws NoSuchAlgorithmException, InvalidKeySpecException
     {
+        return createHash(password,null,null,null);
+    }
+
+    /**
+     * Returns a salted PBKDF2 hash of the password.
+     *
+     * @param   password    the password to hash
+     * @param   Iterations  the number of hash iterations. Default 1000
+     * @param   SaltBytes   the size of the salt. Default 24 bytes.
+     * @param   HashBytes   the size of the hash. Default 24 bytes.
+     * @return              a salted PBKDF2 hash of the password
+     */
+    public static String createHash
+    	( char[]  password
+    	, Integer Iterations
+    	, Integer SaltBytes
+    	, Integer HashBytes
+    	)
+        throws NoSuchAlgorithmException, InvalidKeySpecException
+    {
+    	if (Iterations == null) Iterations = PBKDF2_ITERATIONS;
+    	if (SaltBytes  == null) SaltBytes  = SALT_BYTES;
+    	if (HashBytes  == null) HashBytes  = HASH_BYTES;
+    	
         // Generate a random salt
         SecureRandom random = new SecureRandom();
-        byte[] salt = new byte[SALT_BYTES];
+        byte[] salt = new byte[SaltBytes];
         random.nextBytes(salt);
 
         // Hash the password
-        byte[] hash = pbkdf2(password, salt, PBKDF2_ITERATIONS, HASH_BYTES);
+        byte[] hash = pbkdf2(password, salt, Iterations, HashBytes);
         // format iterations:salt:hash
-        return PBKDF2_ITERATIONS + ":" + toHex(salt) + ":" +  toHex(hash);
+        return Iterations + ":" + toHex(salt) + ":" +  toHex(hash);
     }
 
     /**
@@ -156,52 +206,6 @@ public class PasswordHash
             return String.format("%0" + paddingLength + "d", 0) + hex;
         else
             return hex;
-    }
-
-    /**
-     * Tests the basic functionality of the PasswordHash class
-     *
-     * @param   args        ignored
-     */
-    public static void main(String[] args)
-    {
-        try
-        {
-            // Print out 10 hashes
-            for(int i = 0; i < 10; i++)
-                System.out.println(PasswordHash.createHash("p\r\nassw0Rd!"));
-
-            // Test password validation
-            boolean failure = false;
-            System.out.println("Running tests...");
-            for(int i = 0; i < 100; i++)
-            {
-                String password = ""+i;
-                String hash = createHash(password);
-                String secondHash = createHash(password);
-                if(hash.equals(secondHash)) {
-                    System.out.println("FAILURE: TWO HASHES ARE EQUAL!");
-                    failure = true;
-                }
-                String wrongPassword = ""+(i+1);
-                if(validatePassword(wrongPassword, hash)) {
-                    System.out.println("FAILURE: WRONG PASSWORD ACCEPTED!");
-                    failure = true;
-                }
-                if(!validatePassword(password, hash)) {
-                    System.out.println("FAILURE: GOOD PASSWORD NOT ACCEPTED!");
-                    failure = true;
-                }
-            }
-            if(failure)
-                System.out.println("TESTS FAILED!");
-            else
-                System.out.println("TESTS PASSED!");
-        }
-        catch(Exception ex)
-        {
-            System.out.println("ERROR: " + ex);
-        }
     }
 
 }
