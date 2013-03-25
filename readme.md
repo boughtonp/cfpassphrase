@@ -1,11 +1,37 @@
 cfPassphrase v0.0.000
 
-cfPassphrase is a library providing a simple way to generate secure passphrase
-hashes using proven industry standard algorithms. For more information
-visit the [wiki](https://github.com/boughtonp/cfpassphrase/wiki).
 
-cfPassphrase is currently in development and has not yet been released.
+DESCRIPTION
+-----------
 
-You are on master branch, which will contain stable releases.
+cfPassphrase is a library for securely hashing and checking passphrases using
+proven industry standard algorithms. It aims to provide a simple and common 
+implentation that can be used in any CFML engine.
 
-Switch to develop branch to view latest code.
+Further details of what it provides can be found on the wiki:
+https://github.com/boughtonp/cfpassphrase/wiki
+
+
+STATUS
+------
+
+This is a pre-release version of cfPassphrase, and is not yet ready for general use.
+
+Version: 0.0.000
+Released: n/a
+
+
+REQUIREMENTS
+------------
+
+cfPassphrase is intended to run on any CFML engine.
+
+
+LICENSING
+---------
+
+cfPassphrase is a project created and maintained by Peter Boughton,
+licensed under the LGPLv3 (read license.txt for details).
+
+
+/eof
