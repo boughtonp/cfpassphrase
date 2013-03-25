@@ -20,6 +20,8 @@ This is a pre-release version of cfPassphrase, and is not yet ready for general 
 Version: 0.0.000
 Released: n/a
 
+To check latest release, visit http://sorcerersisle.com/projects:cfpassphrase.html
+
 
 REQUIREMENTS
 ------------
