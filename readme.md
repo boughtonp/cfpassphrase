@@ -6,7 +6,7 @@ DESCRIPTION
 
 cfPassphrase is a library for securely hashing and checking passphrases using
 proven industry standard algorithms. It aims to provide a simple and common 
-implentation that can be used in any CFML engine.
+implementation that can be used in any CFML engine.
 
 Further details of what it provides can be found on the wiki:
 https://github.com/boughtonp/cfpassphrase/wiki
@@ -58,7 +58,7 @@ Java PBKDF2 (crackstation.net/hashing-security.htm)
 * License: Public Domain
 * Files: src/crackstation/PBKDF2/PasswordHash.java
 
-Java scrypt (github.com/wg/scrypt)
+Java SCrypt (github.com/wg/scrypt)
 * Source: https://github.com/wg/scrypt
 * License: Apache v2.0 (http://www.apache.org/licenses/LICENSE-2.0) 
 * Files: src/com/lambdaworks/*
