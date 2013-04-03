@@ -160,8 +160,72 @@ public final class Impl
 
 				return Info;
 
+			case unix_crypt_md5:
+				Parts = Hash.substring(3).split("\\$");
+				
+				Info.put("Algorithm" , "md5crypt" );
+				Info.put("Status"    , "Obsolete" );
+
+				Info.put("Salt"      , Parts[0] );
+				Info.put("Hash"      , Parts[1] );
+			
+				return Info;
+
+			case unix_crypt_nthash:
+				
+				Info.put("Algorithm" , "NT-Hash" );
+				Info.put("Status"    , "Obsolete" );
+
+				Info.put("Hash"      , Hash.substring(4) );
+			
+				return Info;
+
+			case unix_crypt_sha256:
+			case unix_crypt_sha512:
+				Parts = Hash.substring(1).split("\\$");
+				
+				Info.put("Algorithm" , "SHA-2" );
+				Info.put("Version"   , Parts[0].equals(5) ? "256" : "512");
+				Info.put("Status"    , "Unsupported" );
+
+				if ( Parts[1].startsWith("rounds=") )
+				{
+					Info.put("Rounds"    , Parts[1].split("=")[1] );
+					Info.put("Salt"      , Parts[2] );
+					Info.put("Hash"      , Parts[3] );
+				}
+				else
+				{
+					Info.put("Rounds"    , "5000" );
+					Info.put("Salt"      , Parts[1] );
+					Info.put("Hash"      , Parts[2] );
+				}
+			
+				return Info;
+
+			case sun_crypt_md5:
+				Parts = Hash.substring(5).split("\\$");
+				
+				Info.put("Algorithm" , "SunMD5" );
+				Info.put("Status"    , "Obsolete" );
+
+				if ( Parts[1].startsWith("rounds=") )
+				{
+					Info.put("Rounds"    , Parts[0].split("=")[1] );
+					Info.put("Salt"      , Parts[1] );
+					Info.put("Hash"      , Parts[2] );
+				}
+				else
+				{
+					Info.put("Rounds"    , "4096" );
+					Info.put("Salt"      , Parts[0] );
+					Info.put("Hash"      , Parts[1] );
+				}
+			
+				return Info;
+
 			default:
-				throw new Exception("Unsupported Algorithm");
+				throw new Exception("Unknown Algorithm");
 
 		}
 	}

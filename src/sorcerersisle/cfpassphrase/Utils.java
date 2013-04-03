@@ -7,6 +7,13 @@ public final class Utils
 
 	public static enum Algorithm
 	{ bcrypt , pbkdf2 , scrypt
+	// Unimplemented algorithms:
+	, unix_crypt_md5    // $1$
+	, unix_crypt_nthash // $3$
+	, unix_crypt_sha256 // $5$
+	, unix_crypt_sha512 // $6$
+	, sun_crypt_md5     // $md5
+	//
 	; public static Algorithm fromString(String Str)
 		{
 			if ( Str == null ) return DefaultAlgorithm;
@@ -22,7 +29,7 @@ public final class Utils
 		( String Hash )
 	throws Exception
 	{
-		if ( Hash.matches("^\\$2a?\\$\\d+\\$[0-9A-Za-z./]+$") )
+		if ( Hash.matches("^\\$2[axy]?\\$\\d+\\$[0-9A-Za-z./]+$") )
 			return Algorithm.bcrypt;
 
 		else if ( Hash.matches("^\\d+:[0-9a-f]+:[0-9a-f]+$") )
@@ -30,6 +37,21 @@ public final class Utils
 
 		else if ( Hash.matches("^\\$s0\\$[0-9a-z]+(?:\\$[0-9A-Za-z+=/]+){2}$") )
 			return Algorithm.scrypt;
+		
+		else if ( Hash.matches("^\\$1\\$[0-9A-Za-z./]{8}\\$[0-9A-Za-z./]{22}$") )
+			return Algorithm.unix_crypt_md5;
+
+		else if ( Hash.matches("^\\$3\\$\\$[0-9A-Fa-f]{32}$") )
+			return Algorithm.unix_crypt_nthash;
+			
+		else if ( Hash.matches("^\\$5\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{16}\\$[0-9A-Za-z./]{43}$") )
+			return Algorithm.unix_crypt_sha256;
+			
+		else if ( Hash.matches("^\\$6\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{16}\\$[0-9A-Za-z./]{86}$") )
+			return Algorithm.unix_crypt_sha512;
+		
+		else if ( Hash.matches("^\\$md5(?:[$,]rounds=\\d+)?\\$[./0-9A-Za-z]+\\$[./0-9A-Za-z]+$") )
+			return Algorithm.sun_crypt_md5;
 
 		else
 			throw new Exception("Unknown Algorithm Signature");
