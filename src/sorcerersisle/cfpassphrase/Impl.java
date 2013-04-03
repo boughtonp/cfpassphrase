@@ -116,8 +116,16 @@ public final class Impl
 			case bcrypt:
 				Parts = Hash.substring(1).split("\\$");
 
-				Info.put("Algorithm"  , "bcrypt" );
+				Info.put("Algorithm"  , "BCrypt" );
 				Info.put("Version"    , Parts[0] );
+
+				if ( Parts[0].equals("2a") )
+					Info.put("Status" , "Supported" );
+				else if ( Parts[0].equals("2") )
+					Info.put("Status" , "Obsolete" );
+				else
+					Info.put("Status" , "Unsupported" );
+
 				Info.put("Rounds"     , Parts[1] );
 				Info.put("Salt"       , Parts[2].substring(0,16) );
 				Info.put("Hash"       , Parts[2].substring(16)   );
@@ -127,7 +135,9 @@ public final class Impl
 			case pbkdf2:
 				Parts = Hash.split(":");
 
-				Info.put("Algorithm"  , "pbkdf2" );
+				Info.put("Algorithm"  , "PBKDF2" );
+				Info.put("Status"     , "Supported" );
+
 				Info.put("Iterations" , Parts[0] );
 				Info.put("Salt"       , Parts[1] );
 				Info.put("Hash"       , Parts[2] );
@@ -138,8 +148,10 @@ public final class Impl
 				Parts = Hash.substring(2).split("\\$");
 				long Params = Long.parseLong(Parts[1],16);
 
-				Info.put("Algorithm"       , "scrypt" );
+				Info.put("Algorithm"       , "SCrypt" );
 				Info.put("Version"         , Parts[0] );
+				Info.put("Status"          , "Supported" );
+
 				Info.put("CpuCost"         , String.valueOf(Math.round((Math.pow(2, Params >> 16 & 0xffff)))) );
 				Info.put("MemoryCost"      , String.valueOf(Params >> 8 & 0xff) );
 				Info.put("Parallelization" , String.valueOf(Params      & 0xff) );
