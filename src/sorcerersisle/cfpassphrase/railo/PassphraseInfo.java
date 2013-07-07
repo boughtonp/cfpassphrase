@@ -1,3 +1,4 @@
+// cfPassphrase v0.0-dev | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
 package sorcerersisle.cfpassphrase.railo;
 
 import sorcerersisle.cfpassphrase.*;
