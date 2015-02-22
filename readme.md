@@ -34,6 +34,7 @@ At present, it has been tested with:
 * ColdFusion 9  (9,0,1,274733)
 * OpenBD 3.1    (nightly 2013-03-12)
 * Railo 4.0     (4.0.2.002)
+* Lucee 4.5     (4.5.1.000)
 
 It may or not work with other versions.
 
