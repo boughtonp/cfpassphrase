@@ -1,4 +1,4 @@
-// cfPassphrase v0.0-dev | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
 package sorcerersisle.cfpassphrase;
 
 import mindrot.jbcrypt.BCrypt;
@@ -163,28 +163,28 @@ public final class Impl
 
 			case unix_crypt_md5:
 				Parts = Hash.substring(3).split("\\$");
-				
+
 				Info.put("Algorithm" , "md5crypt" );
 				Info.put("Status"    , "Obsolete" );
 
 				Info.put("Salt"      , Parts[0] );
 				Info.put("Hash"      , Parts[1] );
-			
+
 				return Info;
 
 			case unix_crypt_nthash:
-				
+
 				Info.put("Algorithm" , "NT-Hash" );
 				Info.put("Status"    , "Obsolete" );
 
 				Info.put("Hash"      , Hash.substring(4) );
-			
+
 				return Info;
 
 			case unix_crypt_sha256:
 			case unix_crypt_sha512:
 				Parts = Hash.substring(1).split("\\$");
-				
+
 				Info.put("Algorithm" , "SHA-2" );
 				Info.put("Version"   , Parts[0].equals(5) ? "256" : "512");
 				Info.put("Status"    , "Unsupported" );
@@ -201,12 +201,12 @@ public final class Impl
 					Info.put("Salt"      , Parts[1] );
 					Info.put("Hash"      , Parts[2] );
 				}
-			
+
 				return Info;
 
 			case sun_crypt_md5:
 				Parts = Hash.substring(5).split("\\$");
-				
+
 				Info.put("Algorithm" , "SunMD5" );
 				Info.put("Status"    , "Obsolete" );
 
@@ -222,7 +222,7 @@ public final class Impl
 					Info.put("Salt"      , Parts[0] );
 					Info.put("Hash"      , Parts[1] );
 				}
-			
+
 				return Info;
 
 			default:

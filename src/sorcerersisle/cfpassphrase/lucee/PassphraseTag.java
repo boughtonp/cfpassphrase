@@ -1,12 +1,12 @@
 // cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
-package sorcerersisle.cfpassphrase.railo;
+package sorcerersisle.cfpassphrase.lucee;
 
-import railo.runtime.ext.tag.TagSupport;
-import railo.runtime.ext.tag.DynamicAttributes;
-import railo.runtime.type.Collection.Key;
-import railo.runtime.type.Struct;
-import railo.runtime.exp.PageException;
-import railo.loader.engine.CFMLEngineFactory;
+import lucee.runtime.ext.tag.TagSupport;
+import lucee.runtime.ext.tag.DynamicAttributes;
+import lucee.runtime.type.Collection.Key;
+import lucee.runtime.type.Struct;
+import lucee.runtime.exp.PageException;
+import lucee.loader.engine.CFMLEngineFactory;
 
 @SuppressWarnings("deprecation")
 public final class PassphraseTag

@@ -93,7 +93,7 @@ public class PasswordHash
     	if (Iterations == null) Iterations = PBKDF2_ITERATIONS;
     	if (SaltBytes  == null) SaltBytes  = SALT_BYTES;
     	if (HashBytes  == null) HashBytes  = HASH_BYTES;
-    	
+
         // Generate a random salt
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[SaltBytes];
