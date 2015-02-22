@@ -28,18 +28,19 @@ REQUIREMENTS
 
 cfPassphrase is intended to run on any CFML engine.
 
-At present, it has been tested with:
+At present, it has been tested with the latest stable releases, namely: 
 
-* ColdFusion 10 (10,0,0,282462)
+* ColdFusion 11 (11,0,04,293328)
+* ColdFusion 10 (10,0,15,292620)
 * ColdFusion 9  (9,0,1,274733)
+* OpenBD 3.2    (nightly 2015-02-22)
 * OpenBD 3.1    (nightly 2013-03-12)
-* Railo 4.0     (4.0.2.002)
+* Railo 4.2     (4.2.2.004)
 * Lucee 4.5     (4.5.1.000)
 
-It may or not work with other versions.
+If you have issues getting it to work, please log them at:
 
-Please log any issues found:
-https://github.com/boughtonp/cfpassphrase/issues
+  https://github.com/boughtonp/cfpassphrase/issues
 
 
 LICENSING
