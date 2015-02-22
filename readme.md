@@ -1,4 +1,4 @@
-cfPassphrase v0.1-rc
+cfPassphrase v0.1
 
 
 DESCRIPTION
@@ -15,10 +15,8 @@ https://github.com/boughtonp/cfpassphrase/wiki
 STATUS
 ------
 
-This is a release candidate of cfPassphrase, and should be used with care.
-
-Version: 0.1-rc  
-Released: 2013-07-07
+Version: 0.1 
+Released: 2015-02-22
 
 To check latest release, visit http://sorcerersisle.com/projects:cfpassphrase.html
 

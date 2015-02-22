@@ -1,4 +1,4 @@
-// cfPassphrase v0.1-rc | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
 package sorcerersisle.cfpassphrase.coldfusion;
 
 import sorcerersisle.cfpassphrase.*;
