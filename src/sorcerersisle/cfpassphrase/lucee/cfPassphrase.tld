@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Lucee//DTD CFML Tag Library 1.0//EN" "dtd/web-cfmtaglibrary_1_0.dtd">
+<taglib>
+	<tlib-version>1.00</tlib-version>
+
+	<short-name>cfpassphrase-tag</short-name>
+	<uri>http://sorcerersisle.com/projects:cfpassphrase.html</uri>
+	<display-name>cfPassphrase Tag</display-name>
+	<description>Provides tag cfpassphrase to Lucee.</description>
+
+	<name-space>cf</name-space>
+	<name-space-separator/>
+
+	<tag>
+		<name>passphrase</name>
+		<tag-class>sorcerersisle.cfpassphrase.lucee.PassphraseTag</tag-class>
+		<body-content>empty</body-content>
+		<body-rtexprvalue>false</body-rtexprvalue>
+		<description>Checks or calculates a hash using the specified KDF algorithm.</description>
+		<attribute-type>dynamic</attribute-type>
+		<attribute-min>3</attribute-min>
+		<attribute-max>6</attribute-max>
+		<attribute>
+			<name>Action</name>
+			<type>string</type>
+			<required>true</required>
+			<description>Specify [hash], [check], or [info] to determine what action tag takes.</description>
+		</attribute>
+		<attribute>
+			<name>Variable</name>
+			<type>string</type>
+			<required>true</required>
+			<description>Name of variable to contain result of action.</description>
+		</attribute>
+		<attribute>
+			<name>Passphrase</name>
+			<type>string</type>
+			<required>false</required>
+			<description>The passphrase to be hashed or checked. (action=hash,action=check)</description>
+		</attribute>
+		<attribute>
+			<name>Hash</name>
+			<type>string</type>
+			<required>false</required>
+			<description>The existing hash to be checked against. (action=check,action=info)</description>
+		</attribute>
+		<attribute>
+			<name>Algorithm</name>
+			<type>string</type>
+			<required>false</required>
+			<description>Algorithm to be used.</description>
+		</attribute>
+		<attribute>
+			<name>AlgorithmParams</name>
+			<type>struct</type>
+			<required>false</required>
+			<description>Optional parameters to be used by algorithm. (action=hash)</description>
+		</attribute>
+	</tag>
+
+</taglib>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE func-lib PUBLIC "-//Lucee//DTD CFML Function Library 1.0//EN" "dtd/web-cfmfunctionlibrary_1_0.dtd">
+<func-lib>
+	<flib-version>1.00</flib-version>
+
+	<short-name>cfpassphrase-functions</short-name>
+	<uri>http://sorcerersisle.com/projects:cfpassphrase.html</uri>
+	<display-name>cfPassphrase Functions</display-name>
+	<description>Provides functions PassphraseHash and PassphraseCheck to Lucee.</description>
+
+	<function>
+		<name>PassphraseHash</name>
+		<class>sorcerersisle.cfpassphrase.lucee.PassphraseHash</class>
+		<description>PassphraseHash returns a hash using the specified KDF algorithm.</description>
+		<argument><name>Passphrase</name>      <type>String</type> <required>yes</required> <description>The passphrase to hash.</description>                   </argument>
+		<argument><name>Algorithm</name>       <type>String</type> <required>no</required>  <description>The algorithm to use. ()Default is bcrypt</description> </argument>
+		<argument><name>AlgorithmParams</name> <type>Struct</type> <required>no</required>  <description>Any parameters to pass into the algorithm.</description></argument>
+		<return><type>String</type></return>
+	</function>
+
+	<function>
+		<name>PassphraseCheck</name>
+		<class>sorcerersisle.cfpassphrase.lucee.PassphraseCheck</class>
+		<description>PassphraseCheck returns true/false depending on whether the passphrase matches the provided hash, according to the algorithm provided.</description>
+		<argument><name>Passphrase</name> <type>String</type> <required>yes</required> <description>The passphrase to check.</description>                                  </argument>
+		<argument><name>Hash</name>       <type>String</type> <required>yes</required> <description>The existing passphrase hash.</description>                             </argument>
+		<argument><name>Algorithm</name>  <type>String</type> <required>no</required>  <description>The algorithm to use. (Default depends on hash signature.)</description></argument>
+		<return><type>Boolean</type></return>
+	</function>
+
+	<function>
+		<name>PassphraseInfo</name>
+		<class>sorcerersisle.cfpassphrase.lucee.PassphraseInfo</class>
+		<description>PassphraseInfo Identifies the algorithm and parameters for the specified hash.</description>
+		<argument><name>Hash</name>      <type>String</type> <required>yes</required> <description>The hash to return info about.</description>                            </argument>
+		<argument><name>Algorithm</name> <type>String</type> <required>no</required>  <description>The algorithm to use. (Default depends on hash signature.)</description></argument>
+		<return><type>Struct</type></return>
+	</function>
+
+</func-lib>
