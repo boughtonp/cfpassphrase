@@ -18,7 +18,7 @@ STATUS
 This is a release candidate of cfPassphrase, and should be used with care.
 
 Version: 0.1-rc  
-Released: 2013-07-07
+Released: 2016-07-06
 
 To check latest release, visit http://sorcerersisle.com/projects:cfpassphrase.html
 
@@ -52,7 +52,7 @@ licensed under the LGPLv3 (read license.txt for details).
 The project gratefully makes use of the third-party software detailed below,
 each available individually under their respective licenses.
 
-jBCrypt v0.3 (mindrot.org/projects/jBCrypt)
+jBCrypt v0.4 (mindrot.org/projects/jBCrypt)
 * Source: http://mindrot.org/files/jBCrypt/
 * License: ISC/BSD (http://mindrot.org/files/jBCrypt/LICENSE)
 * Files: src/mindrot/jbcrypt/BCrypt.java
