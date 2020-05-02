@@ -1,4 +1,4 @@
-// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase;
 
 import java.io.IOException;
@@ -14,8 +14,8 @@ public final class cfPassphrase
 		String Msg =
 			  "cfPassphrase v0.0.000\n"
 			+ "\n"
-			+ "Project Info: http://sorcerersisle.com/projects:cfpassphrase.html\n"
-			+ "Install Docs: https://github.com/boughtonp/cfpassphrase/wiki/Installation\n"
+			+ "Project Info: https://www.sorcerersisle.com/software/cfpassphrase\n"
+			+ "Install Docs: https://docs.sorcerersisle.com/cfpassphrase/Installation\n"
 			;
 
 

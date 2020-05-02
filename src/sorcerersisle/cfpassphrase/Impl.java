@@ -1,7 +1,7 @@
-// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase;
 
-import mindrot.jbcrypt.BCrypt;
+import org.mindrot.jbcrypt.BCrypt;
 import crackstation.PBKDF2.PasswordHash;
 import com.lambdaworks.crypto.SCryptUtil;
 import java.util.Map;

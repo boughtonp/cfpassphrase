@@ -9,7 +9,7 @@ proven industry standard algorithms. It aims to provide a simple and common
 implementation that can be used in any CFML engine.
 
 Further details of what it provides can be found on the wiki:
-https://github.com/boughtonp/cfpassphrase/wiki
+https://docs.sorcerersisle.com/cfpassphrase
 
 
 STATUS
@@ -18,7 +18,7 @@ STATUS
 Version: 0.1 
 Released: 2015-02-22
 
-To check latest release, visit http://sorcerersisle.com/projects:cfpassphrase.html
+To check latest release, visit https://www.sorcerersisle.com/software/cfpassphrase
 
 
 REQUIREMENTS
