@@ -50,10 +50,10 @@ licensed under the LGPLv3 (read license.txt for details).
 The project gratefully makes use of the third-party software detailed below,
 each available individually under their respective licenses.
 
-jBCrypt v0.3 (mindrot.org/projects/jBCrypt)
+jBCrypt v0.4 (mindrot.org/projects/jBCrypt)
 * Source: http://mindrot.org/files/jBCrypt/
 * License: ISC/BSD (http://mindrot.org/files/jBCrypt/LICENSE)
-* Files: src/mindrot/jbcrypt/BCrypt.java
+* Files: src/org/mindrot/jbcrypt/BCrypt.java
 
 Java PBKDF2 (crackstation.net/hashing-security.htm)
 * Source: http://crackstation.net/hashing-security.htm
