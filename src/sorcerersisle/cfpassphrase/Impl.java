@@ -186,7 +186,7 @@ public final class Impl
 				Parts = Hash.substring(1).split("\\$");
 
 				Info.put("Algorithm" , "SHA-2" );
-				Info.put("Version"   , Parts[0].equals(5) ? "256" : "512");
+				Info.put("Version"   , Parts[0].equals("5") ? "256" : "512");
 				Info.put("Status"    , "Unsupported" );
 
 				if ( Parts[1].startsWith("rounds=") )
@@ -210,7 +210,7 @@ public final class Impl
 				Info.put("Algorithm" , "SunMD5" );
 				Info.put("Status"    , "Obsolete" );
 
-				if ( Parts[1].startsWith("rounds=") )
+				if ( Parts[0].startsWith("rounds=") )
 				{
 					Info.put("Rounds"    , Parts[0].split("=")[1] );
 					Info.put("Salt"      , Parts[1] );
