@@ -24,17 +24,12 @@ To check latest release, visit https://www.sorcerersisle.com/software/cfpassphra
 REQUIREMENTS
 ------------
 
-cfPassphrase is intended to run on any CFML engine.
+cfPassphrase is intended to run on any CFML engine, but specifically:
 
-At present, it has been tested with the latest stable releases, namely: 
-
-* ColdFusion 11 (11,0,04,293328)
-* ColdFusion 10 (10,0,15,292620)
-* ColdFusion 9  (9,0,1,274733)
-* OpenBD 3.2    (nightly 2015-02-22)
-* OpenBD 3.1    (nightly 2013-03-12)
-* Railo 4.2     (4.2.2.004)
-* Lucee 4.5     (4.5.1.000)
+* ColdFusion 9 and above.
+* Lucee 5.3 and above.
+* Railo / Lucee 4.x
+* OpenBD 3.x
 
 If you have issues getting it to work, please log them at:
 
