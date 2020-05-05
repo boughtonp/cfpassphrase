@@ -1,4 +1,4 @@
-// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
+// cfPassphrase v0.2-rc | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase.openbd;
 
 import com.bluedragon.plugin.Plugin;
@@ -20,7 +20,7 @@ public final class cfPassphrasePlugin implements Plugin
 
 	public String getPluginVersion()
 	{
-		return "0.0.000";
+		return "0.2-rc";
 	}
 
 	public String getPluginDescription()

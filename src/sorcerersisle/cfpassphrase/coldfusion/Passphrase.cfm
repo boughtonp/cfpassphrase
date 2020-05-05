@@ -1,4 +1,4 @@
-<!--- cfPassphrase v0.0-dev | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase --->
+<!--- cfPassphrase v0.2-rc | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase --->
 <cfif NOT StructKeyExists(Attributes,'Action')>
 	<cfthrow
 		type    = "cfPassphrase.ColdFusion.Tag.MissingAttribute.Action"

@@ -1,4 +1,4 @@
-cfPassphrase v0.1
+cfPassphrase v0.2-rc
 
 
 DESCRIPTION
@@ -15,8 +15,8 @@ https://docs.sorcerersisle.com/cfpassphrase
 STATUS
 ------
 
-Version: 0.1 
-Released: 2015-02-22
+Version: 0.2-rc
+Released: 2019-05-05
 
 To check latest release, visit https://www.sorcerersisle.com/software/cfpassphrase
 
