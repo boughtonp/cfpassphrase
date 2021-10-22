@@ -1,59 +1,53 @@
-cfPassphrase v0.1
+cfPassphrase
+
+* Version:       0.2
+* License:       LGPLv3
+* Homepage:      https://www.sorcerersisle.com/software/cfpassphrase
+* Documentation: https://docs.sorcerersisle.com/cfpassphrase
+* Repository:    https://code.sorcerersisle.com/cfpassphrase.git
+* Issues:        https://github.com/boughtonp/cfpassphrase/issues
 
 
-DESCRIPTION
+Description
 -----------
 
-cfPassphrase is a library for securely hashing and checking passphrases using
-proven industry standard algorithms. It aims to provide a simple and common 
-implementation that can be used in any CFML engine.
+cfPassphrase is a library for securely hashing and checking passwords and 
+passphrases using proven industry standard algorithms. It aims to provide 
+a simple and common implementation that can be used in any CFML engine.
 
-Further details of what it provides can be found on the wiki:
-https://github.com/boughtonp/cfpassphrase/wiki
-
-
-STATUS
-------
-
-Version: 0.1 
-Released: 2015-02-22
-
-To check latest release, visit http://sorcerersisle.com/projects:cfpassphrase.html
+For further details of what is provided see docs.pdf for documentation.
 
 
-REQUIREMENTS
+Requirements
 ------------
 
-cfPassphrase is intended to run on any CFML engine.
+cfPassphrase supports any modern CFML engine, specifically:
 
-At present, it has been tested with the latest stable releases, namely: 
+* ColdFusion 9 and above.
+* Lucee 5.3 and above.
+* Railo / Lucee 4.x
+* OpenBD 3.x
 
-* ColdFusion 11 (11,0,04,293328)
-* ColdFusion 10 (10,0,15,292620)
-* ColdFusion 9  (9,0,1,274733)
-* OpenBD 3.2    (nightly 2015-02-22)
-* OpenBD 3.1    (nightly 2013-03-12)
-* Railo 4.2     (4.2.2.004)
-* Lucee 4.5     (4.5.1.000)
+It requires a minimum JRE/JDK version of 8.
 
-If you have issues getting it to work, please log them at:
-
-  https://github.com/boughtonp/cfpassphrase/issues
+If you are interested in running it on a different environment,
+or have issues getting it to work, please raise an issue.
 
 
-LICENSING
----------
+Licensing & Credits
+-------------------
 
-cfPassphrase is a project created and maintained by Peter Boughton,
-licensed under the LGPLv3 (read license.txt for details).
+This project is available under the terms of the LGPLv3 license.
+See license.txt to understand your rights and obligations.
 
-The project gratefully makes use of the third-party software detailed below,
-each available individually under their respective licenses.
+cfPassphrase was created by Peter Boughton, and gratefully makes 
+use of the third-party software detailed below, each available 
+individually under their respective licenses.
 
-jBCrypt v0.3 (mindrot.org/projects/jBCrypt)
+jBCrypt v0.4 (mindrot.org/projects/jBCrypt)
 * Source: http://mindrot.org/files/jBCrypt/
 * License: ISC/BSD (http://mindrot.org/files/jBCrypt/LICENSE)
-* Files: src/mindrot/jbcrypt/BCrypt.java
+* Files: src/org/mindrot/jbcrypt/BCrypt.java
 
 Java PBKDF2 (crackstation.net/hashing-security.htm)
 * Source: http://crackstation.net/hashing-security.htm
@@ -64,6 +58,18 @@ Java SCrypt (github.com/wg/scrypt)
 * Source: https://github.com/wg/scrypt
 * License: Apache v2.0 (http://www.apache.org/licenses/LICENSE-2.0) 
 * Files: src/com/lambdaworks/*
+
+
+Contributing
+------------
+
+This project was created with the aim of making secure hashing
+easy to implement for all CFML applications that need it.
+
+Bug fixes, backwards-compatible improvements and additions are welcome,
+but please discuss first (either raise an issue or send an email).
+
+Changes are accepted as either pull requests or patch files.
 
 
 /eof

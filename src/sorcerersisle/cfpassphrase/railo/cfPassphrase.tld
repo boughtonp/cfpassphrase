@@ -4,7 +4,7 @@
 	<tlib-version>1.00</tlib-version>
 
 	<short-name>cfpassphrase-tag</short-name>
-	<uri>http://sorcerersisle.com/projects:cfpassphrase.html</uri>
+	<uri>https://www.sorcerersisle.com/software/cfpassphrase</uri>
 	<display-name>cfPassphrase Tag</display-name>
 	<description>Provides tag cfpassphrase to Railo.</description>
 

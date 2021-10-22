@@ -1,4 +1,4 @@
-// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.2 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase;
 
 import java.util.Map;
@@ -45,10 +45,10 @@ public final class Utils
 		else if ( Hash.matches("^\\$3\\$\\$[0-9A-Fa-f]{32}$") )
 			return Algorithm.unix_crypt_nthash;
 
-		else if ( Hash.matches("^\\$5\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{16}\\$[0-9A-Za-z./]{43}$") )
+		else if ( Hash.matches("^\\$5\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{1,16}\\$[0-9A-Za-z./]{43}$") )
 			return Algorithm.unix_crypt_sha256;
 
-		else if ( Hash.matches("^\\$6\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{16}\\$[0-9A-Za-z./]{86}$") )
+		else if ( Hash.matches("^\\$6\\$(?:rounds=\\d{1,9}\\$)?[0-9A-Za-z./]{1,16}\\$[0-9A-Za-z./]{86}$") )
 			return Algorithm.unix_crypt_sha512;
 
 		else if ( Hash.matches("^\\$md5(?:[$,]rounds=\\d+)?\\$[./0-9A-Za-z]+\\$[./0-9A-Za-z]+$") )

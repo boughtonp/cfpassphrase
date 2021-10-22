@@ -4,7 +4,7 @@
 	<flib-version>1.00</flib-version>
 
 	<short-name>cfpassphrase-functions</short-name>
-	<uri>http://sorcerersisle.com/projects:cfpassphrase.html</uri>
+	<uri>https://www.sorcerersisle.com/software/cfpassphrase</uri>
 	<display-name>cfPassphrase Functions</display-name>
 	<description>Provides functions PassphraseHash and PassphraseCheck to Railo.</description>
 

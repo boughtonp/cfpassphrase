@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Sealed: true
+Main-Class: sorcerersisle.cfpassphrase.cfPassphrase
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: sorcerersisle.cfpassphrase
+Bundle-Version: 0.2
+Bundle-Name: cfPassphrase
+Bundle-Description: Provides functions PassphraseHash, PassphraseCheck and PassphraseInfo to Lucee.
+Bundle-License: LGPLv3
+Bundle-DocURL: https://docs.sorcerersisle.com/cfpassphrase
+Export-Package: sorcerersisle.cfpassphrase.lucee.PassphraseInfo,sorcerersisle.cfpassphrase.lucee.PassphraseHash,sorcerersisle.cfpassphrase.lucee.PassphraseCheck

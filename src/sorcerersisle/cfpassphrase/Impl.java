@@ -1,7 +1,7 @@
-// cfPassphrase v0.1 | (c) Peter Boughton | License: LGPLv3 | Website: sorcerersisle.com/projects:cfpassphrase.html
+// cfPassphrase v0.2 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase;
 
-import mindrot.jbcrypt.BCrypt;
+import org.mindrot.jbcrypt.BCrypt;
 import crackstation.PBKDF2.PasswordHash;
 import com.lambdaworks.crypto.SCryptUtil;
 import java.util.Map;
@@ -186,7 +186,7 @@ public final class Impl
 				Parts = Hash.substring(1).split("\\$");
 
 				Info.put("Algorithm" , "SHA-2" );
-				Info.put("Version"   , Parts[0].equals(5) ? "256" : "512");
+				Info.put("Version"   , Parts[0].equals("5") ? "256" : "512");
 				Info.put("Status"    , "Unsupported" );
 
 				if ( Parts[1].startsWith("rounds=") )
@@ -210,7 +210,7 @@ public final class Impl
 				Info.put("Algorithm" , "SunMD5" );
 				Info.put("Status"    , "Obsolete" );
 
-				if ( Parts[1].startsWith("rounds=") )
+				if ( Parts[0].startsWith("rounds=") )
 				{
 					Info.put("Rounds"    , Parts[0].split("=")[1] );
 					Info.put("Salt"      , Parts[1] );
