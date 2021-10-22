@@ -1,4 +1,4 @@
-// cfPassphrase v0.2-rc | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
+// cfPassphrase v0.2 | (c) Peter Boughton | License: LGPLv3 | Website: https://www.sorcerersisle.com/software/cfpassphrase
 package sorcerersisle.cfpassphrase;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ public final class cfPassphrase
 		( String[] Args )
 	{
 		String Msg =
-			  "cfPassphrase v0.2-rc\n"
+			  "cfPassphrase v0.2\n"
 			+ "\n"
 			+ "Project Info: https://www.sorcerersisle.com/software/cfpassphrase\n"
 			+ "Install Docs: https://docs.sorcerersisle.com/cfpassphrase/Installation\n"
